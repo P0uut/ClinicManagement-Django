@@ -3,4 +3,8 @@
 {% block content %}
 <h2>Registration Successful</h2>
 <p>Patient registered successfully.</p>
+<p>The Patient {{ name }} with ID {{ latest_patient_id }} is registered</p>
+<button class="btn btn-primary">
+    <a  href="{% url 'dashboardguiv2:receptionist_view' %}">Done</a>
+</button>
 {% endblock %}

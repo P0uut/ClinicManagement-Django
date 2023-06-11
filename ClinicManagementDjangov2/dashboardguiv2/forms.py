@@ -4,7 +4,7 @@ from .models import Patient
 class PatientRegistrationForm(forms.ModelForm):
     class Meta:
         model = Patient
-        fields = ['name', 'date_of_birth']  # Add other fields here
+        fields = ['name', 'date_of_birth', 'gender', 'address']  # Add other fields here
 
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control name'}),

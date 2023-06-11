@@ -41,7 +41,13 @@ class User(models.Model):
 
 class Patient(models.Model):
     name = models.CharField(max_length=100)
+    GENDER_CHOICES = (
+            ('M', 'Homme'),
+            ('F', 'Femme'),
+        )
+    gender = models.CharField(max_length=4, choices=GENDER_CHOICES, default="None", null=True)
     date_of_birth = models.DateField()
+    address = models.CharField(max_length=30, default="Earth", null=True)
     # Add other fields as per the required information
 
     def __str__(self):

@@ -147,12 +147,20 @@ def registration_success(request):
 
 from .forms import PatientRegistrationForm
 
+# register_patient
 def register_patient(request):
     if request.method == 'POST':
         form = PatientRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'success.html')
+            latest_patient = Patient.objects.latest('id')
+            latest_patient_id = latest_patient.id
+            name = form.cleaned_data['name']
+            context = {
+                'latest_patient_id': latest_patient_id,
+                'name': name
+            }
+            return render(request, 'success.html', context)
     else:
         form = PatientRegistrationForm()
     return render(request, 'register_patient.html', {'form': form})
@@ -451,9 +459,6 @@ def view_monthly_report(request):
 
 def report_success(request):
     return render(request, 'report_success.html')
-
-from django.shortcuts import render
-from .models import Patient
 
 def patient_list(request):
     patients = Patient.objects.all()
