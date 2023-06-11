@@ -19,9 +19,13 @@ from django.urls import path, include
 
 from django.conf import settings
 from django.conf.urls.static import static
-
+from dashboardguiv2.views import login_view
+from django.shortcuts import redirect
 
 urlpatterns = [
+    path('', login_view, name = 'login'),
+    #path('login/', login_view, name = 'login'),
+    path('login/', lambda request: redirect('/'), name='login_redirect'),
     path('admin/', admin.site.urls),
     path('dashboardguiv2/', include('dashboardguiv2.urls')),
     path('accounts/', include('dashboardguiv2.urls')),
