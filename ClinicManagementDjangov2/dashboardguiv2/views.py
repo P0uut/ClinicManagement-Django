@@ -7,6 +7,9 @@ from django.http import HttpResponse  # Import the HttpResponse class
 
 from .models import Service
 
+def home(request):
+    return render(request, 'home.html')
+
 def index(request):
     services = Service.objects.all()
     return render(request, 'index.html', {'services': services})

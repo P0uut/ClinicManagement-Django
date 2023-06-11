@@ -6,6 +6,7 @@ app_name = 'dashboardguiv2'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('home/', views.home, name='home'),
     path('appointment/', views.appointment, name='appointment'),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),

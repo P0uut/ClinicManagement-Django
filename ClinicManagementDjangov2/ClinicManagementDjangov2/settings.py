@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = '/home/'  # Redirects unauthenticated users to /home/ for login
+LOGIN_REDIRECT_URL = '/'  # Redirects authenticated users to the index page
 
 # Application definition
 

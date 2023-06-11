@@ -1,0 +1,11 @@
+<!-- home.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <h2>Welcome to My Clinic App</h2>
+        <p>This is the home page of My Clinic App. Feel free to explore the features and functionalities.</p>
+        <a href="{% url 'dashboardguiv2:login' %}" class="btn">Login</a>
+    </section>
+{% endblock %}
