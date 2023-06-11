@@ -36,4 +36,5 @@ urlpatterns = [
     path('change_regulation_success/', login_required(views.change_regulation_success), name='change_regulation_success'),
     path('create_monthly_report/', login_required(views.create_monthly_report), name='create_monthly_report'),
     path('view_monthly_report/', login_required(views.view_monthly_report), name='view_monthly_report'),
+    path('patients/', login_required(views.patient_list), name='patient_list'),
 ]

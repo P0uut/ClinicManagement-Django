@@ -133,3 +133,18 @@ form > input.btn-prescribe:hover {
 form > div {
     margin-top: 10px;
 } 
+
+table.patient-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.patient-table th,
+table.patient-table td {
+    border: 1px solid red;
+    padding: 10px;
+}
+
+table.patient-table th {
+    background-color: #f2f2f2;
+}
